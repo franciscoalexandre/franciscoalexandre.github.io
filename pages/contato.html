@@ -30,8 +30,69 @@
     <li><a href="contato.html">Contato</a></li>
   </ul>
 
-    <div>
-      Contato da empresa....
+    <div class="container">
+      <div id="paragrafos">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <fieldset id="contato">
+        <legend>Entre em contato</legend>
+        <form method="post" action="processamento.php">
+          <table>
+            <tr>
+              <th>
+                <label for="nome">Nome: </label>
+              </th>
+              <th>
+                <input placeholder="Nome" type="text" name="nome" id="nome">
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label for="e-mail">E-mail: </label>
+              </th>
+              <th>
+                <input placeholder="E-mail" type="text" name="e-mail" id="e-mail">
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label for="cidade">Cidade: </label>
+              </th>
+              <th>
+                <input placeholder="Cidade" type="text" name="cidade" id="cidade">
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label for="estado">Estado: </label>
+              </th>
+              <th>
+                <input placeholder="Estado" type="text" name="estado" id="estado">
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <label for="mensagem">Mensagem: </label>
+              </th>
+              <th>
+                <textarea placeholder="Mensagem..." id="mensagem" name="mensagem"></textarea>
+              </th>
+            </tr>
+            <tr>
+              <th colspan="2" id="botao">
+                <input type="submit" name="enviar" value="Enviar">
+              </th>
+            </tr>
+          </table>
+        </form>
+      </fieldset>
     </div>
   
 
