@@ -31,7 +31,7 @@
     <li><a href="pages/contato.html">Contato</a></li>
   </ul>
 
-   <div class="row">
+   <div class="row barbearia">
     <div class="col s6 m4">
       <div class="card blue-grey">
         <div class="card-image">
@@ -123,6 +123,12 @@
     </div>
   </div> <!-- esse é o fim do row -->
 
+  <div class="center">
+  	<a class="btn-floating btn-small btn-large add-btn sidenav-trigger">
+  		<i class="material-icons">add</i>
+  	</a>
+  </div>
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
@@ -142,6 +148,7 @@
     messagingSenderId: "38012055856",
     appId: "1:38012055856:web:f5e1bd0d06c159c67e18f5"
   };
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
