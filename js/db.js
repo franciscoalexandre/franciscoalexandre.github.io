@@ -17,4 +17,25 @@ db.collection('barbearia').onSnapshot(snapshot => {
     });
 });
 
+const form = document.querySelector('form');
+form.addEventListener('submit', evt => {
+    evt.preventDefault();
+
+    const servico = {
+        nome: form.servicoTitulo.value,
+        descricao: form.servicoDescricao.value,
+        link: form.servicoLink.value,
+        endereco_imagem: form.servicoArquivo.value
+    };
+
+    db.collection('servicos').add(servico)
+        .catch(err => console.log(err));
+
+    //reseta o formulario
+    form.servicoTitulo.value = '';
+    form.servicoDescricao.value = '';
+    form.servicoLink.value = '';
+    form.servicoArquivo.value = '';
+
+});
 
