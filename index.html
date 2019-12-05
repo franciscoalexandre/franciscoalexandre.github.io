@@ -194,8 +194,8 @@
         fileButton.addEventListener('change', function(e) {
             // obter arquivo
             var file = e.target.files[0];
+            console.log("entrou em event listener");
             file.name = document.getElementById("fileButton").value;
-            console.log(file.name);
             // Create the file metadata
             var metadata = {
                 contentType: 'image/jpeg'
