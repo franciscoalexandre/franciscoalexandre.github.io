@@ -10,9 +10,10 @@ db.enablePersistence()
 db.collection('barbearia').onSnapshot(snapshot => {
     snapshot.docChanges().forEach(change => {
         if (change.type === 'added') {
-            renderRecipe(change.doc.data(), change.doc.id);
+            desenhaCard(change.doc.data(), change.doc.id);
         }
         if (change.type === 'removed') {
+            removeCard(change.doc.id);
         }
     });
 });
@@ -22,20 +23,30 @@ form.addEventListener('submit', evt => {
     evt.preventDefault();
 
     const servico = {
-        nome: form.servicoTitulo.value,
-        descricao: form.servicoDescricao.value,
-        link: form.servicoLink.value,
-        endereco_imagem: form.servicoArquivo.value
+        Titulo: form.serviçoTitulo.value,
+        Descricao: form.serviçoDescricao.value,
+        Link: form.serviçoLink.value,
+        imagem: form.serviçoArquivo.value
     };
 
-    db.collection('servicos').add(servico)
+    db.collection('barbearia').add(servico)
         .catch(err => console.log(err));
 
     //reseta o formulario
-    form.servicoTitulo.value = '';
-    form.servicoDescricao.value = '';
-    form.servicoLink.value = '';
-    form.servicoArquivo.value = '';
+    form.serviçoTitulo.value = '';
+    form.serviçoDescricao.value = '';
+    form.serviçoLink.value = '';
+    form.serviçoArquivo.value = '';
 
 });
+
+// remove a recipe
+const barbearia = document.querySelector('.barbearia');
+barbearia.addEventListener('click', evt => {
+  if(evt.target.tagName === 'I'){
+    const id = evt.target.getAttribute('data-id');
+    //console.log(id);
+    db.collection('barbearia').doc(id).delete();
+  }
+})
 
