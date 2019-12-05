@@ -26,7 +26,7 @@ form.addEventListener('submit', evt => {
         Titulo: form.serviçoTitulo.value,
         Descricao: form.serviçoDescricao.value,
         Link: form.serviçoLink.value,
-        imagem: form.serviçoArquivo.value
+        imagem: filePath
     };
 
     db.collection('barbearia').add(servico)
