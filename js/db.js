@@ -41,8 +41,8 @@ form.addEventListener('submit', evt => {
 });
 
 // remove a recipe
-const barbearia = document.querySelector('.barbearia');
-barbearia.addEventListener('click', evt => {
+const barbearia1 = document.querySelector('.barbearia');
+barbearia1.addEventListener('click', evt => {
   if(evt.target.tagName === 'I'){
     const id = evt.target.getAttribute('data-id');
     //console.log(id);
